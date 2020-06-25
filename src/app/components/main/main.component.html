@@ -1,27 +1,236 @@
 <div class="container my-2">
   <div class="row">
-
-   
-    <ng-container *ngFor="let item of pokemonsList; let i = index;">
-
+    <ng-container *ngIf="!status.data">
       <div class="col-12 col-md-4">
-        <div class="card darken-1">
-          <div class="card-content pt-1">
-            <img  src="{{item.data.sprites.front_default}}" alt="Photo of a Shiba Inu">
-  
-            <span class="card-title activator grey-text text-darken-4 text-capitalize">{{item.name}}<i class="material-icons right">more_vert</i></span>
-            <p><a href="#">This is a link</a></p>
-          </div>
-          <div class="card-reveal py-3">
-            <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-            <p>Here is some more information about this product that is only revealed once clicked on.</p>
-            <div class="card-action px-0 pb-0">
-              <a href="#">Ver más</a>
+        <div class="fb-item">
+          <div class="first-section-wrapper">
+            <div class="gravatar">
+              <ngx-skeleton-loader
+                appearance="circle"
+                [theme]="{ width: '80px', height: '80px' }"
+              >
+              </ngx-skeleton-loader>
+            </div>
+            <div class="gravatar-title">
+              <div>
+                <ngx-skeleton-loader
+                  [theme]="{
+                    width: '200px',
+                    'border-radius': '0',
+                    height: '15px',
+                    'margin-bottom': '10px'
+                  }"
+                ></ngx-skeleton-loader>
+              </div>
+              <div>
+                <ngx-skeleton-loader
+                  [theme]="{ width: '170px', 'border-radius': '0', height: '15px' }"
+                ></ngx-skeleton-loader>
+              </div>
             </div>
           </div>
          
         </div>
+        
+        
       </div>
+      <div class="col-12 col-md-4">
+        <div class="fb-item">
+          <div class="first-section-wrapper">
+            <div class="gravatar">
+              <ngx-skeleton-loader
+                appearance="circle"
+                [theme]="{ width: '80px', height: '80px' }"
+              >
+              </ngx-skeleton-loader>
+            </div>
+            <div class="gravatar-title">
+              <div>
+                <ngx-skeleton-loader
+                  [theme]="{
+                    width: '200px',
+                    'border-radius': '0',
+                    height: '15px',
+                    'margin-bottom': '10px'
+                  }"
+                ></ngx-skeleton-loader>
+              </div>
+              <div>
+                <ngx-skeleton-loader
+                  [theme]="{ width: '170px', 'border-radius': '0', height: '15px' }"
+                ></ngx-skeleton-loader>
+              </div>
+            </div>
+          </div>
+         
+        </div>
+        
+        
+      </div>
+      <div class="col-12 col-md-4">
+        <div class="fb-item">
+          <div class="first-section-wrapper">
+            <div class="gravatar">
+              <ngx-skeleton-loader
+                appearance="circle"
+                [theme]="{ width: '80px', height: '80px' }"
+              >
+              </ngx-skeleton-loader>
+            </div>
+            <div class="gravatar-title">
+              <div>
+                <ngx-skeleton-loader
+                  [theme]="{
+                    width: '200px',
+                    'border-radius': '0',
+                    height: '15px',
+                    'margin-bottom': '10px'
+                  }"
+                ></ngx-skeleton-loader>
+              </div>
+              <div>
+                <ngx-skeleton-loader
+                  [theme]="{ width: '170px', 'border-radius': '0', height: '15px' }"
+                ></ngx-skeleton-loader>
+              </div>
+            </div>
+          </div>
+         
+        </div>
+        
+        
+      </div>
+      <div class="col-12 col-md-4">
+        <div class="fb-item">
+          <div class="first-section-wrapper">
+            <div class="gravatar">
+              <ngx-skeleton-loader
+                appearance="circle"
+                [theme]="{ width: '80px', height: '80px' }"
+              >
+              </ngx-skeleton-loader>
+            </div>
+            <div class="gravatar-title">
+              <div>
+                <ngx-skeleton-loader
+                  [theme]="{
+                    width: '200px',
+                    'border-radius': '0',
+                    height: '15px',
+                    'margin-bottom': '10px'
+                  }"
+                ></ngx-skeleton-loader>
+              </div>
+              <div>
+                <ngx-skeleton-loader
+                  [theme]="{ width: '170px', 'border-radius': '0', height: '15px' }"
+                ></ngx-skeleton-loader>
+              </div>
+            </div>
+          </div>
+         
+        </div>
+        
+        
+      </div>
+      <div class="col-12 col-md-4">
+        <div class="fb-item">
+          <div class="first-section-wrapper">
+            <div class="gravatar">
+              <ngx-skeleton-loader
+                appearance="circle"
+                [theme]="{ width: '80px', height: '80px' }"
+              >
+              </ngx-skeleton-loader>
+            </div>
+            <div class="gravatar-title">
+              <div>
+                <ngx-skeleton-loader
+                  [theme]="{
+                    width: '200px',
+                    'border-radius': '0',
+                    height: '15px',
+                    'margin-bottom': '10px'
+                  }"
+                ></ngx-skeleton-loader>
+              </div>
+              <div>
+                <ngx-skeleton-loader
+                  [theme]="{ width: '170px', 'border-radius': '0', height: '15px' }"
+                ></ngx-skeleton-loader>
+              </div>
+            </div>
+          </div>
+         
+        </div>
+        
+        
+      </div>
+      <div class="col-12 col-md-4">
+        <div class="fb-item">
+          <div class="first-section-wrapper">
+            <div class="gravatar">
+              <ngx-skeleton-loader
+                appearance="circle"
+                [theme]="{ width: '80px', height: '80px' }"
+              >
+              </ngx-skeleton-loader>
+            </div>
+            <div class="gravatar-title">
+              <div>
+                <ngx-skeleton-loader
+                  [theme]="{
+                    width: '200px',
+                    'border-radius': '0',
+                    height: '15px',
+                    'margin-bottom': '10px'
+                  }"
+                ></ngx-skeleton-loader>
+              </div>
+              <div>
+                <ngx-skeleton-loader
+                  [theme]="{ width: '170px', 'border-radius': '0', height: '15px' }"
+                ></ngx-skeleton-loader>
+              </div>
+            </div>
+          </div>
+         
+        </div>
+        
+        
+      </div>
+
+    </ng-container>
+
+  
+   
+    <ng-container *ngFor="let item of pokemonsList; let i = index;">
+      <ng-container *ngIf="status.data">
+        
+        <div class="col-12 col-md-4">
+          <div class="card darken-1">
+            <div class="card-content pt-1">
+              <img  src="{{item.data.sprites.front_default}}" alt="{{item.name}} Photo">
+    
+              <span class="card-title activator grey-text text-darken-4 text-capitalize">{{item.name}}<i class="material-icons right">more_vert</i></span>
+              <mat-chip-list aria-label="Fish selection">
+                <ng-container *ngFor="let types of item.data.types; let i = index;">
+                  <mat-chip>{{types.type.name}}</mat-chip>
+                </ng-container>
+              </mat-chip-list>
+            </div>
+            <div class="card-reveal py-3">
+              <span class="card-title grey-text text-darken-4 text-capitalize">{{item.name}}<i class="material-icons right">close</i></span>
+              <p>Pokémon N° {{item.data.id}}</p>
+              <div class="card-action px-0 pb-0">
+                <a href="#">Ver más</a>
+              </div>
+            </div>
+           
+          </div>
+        </div>
+      </ng-container>
+
     </ng-container>
 
    

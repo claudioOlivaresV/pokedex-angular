@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ServiceService } from 'src/app/services/service.service';
 import { async } from '@angular/core/testing';
+import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
+
 
 @Component({
   selector: 'app-main',
@@ -32,27 +34,12 @@ export class MainComponent implements OnInit {
   }
 
   getGeneration() {
-    this.status = {
-      data: false,
-      loading: true,
-      error: null
-    };
-    this.services.getGeneration(1, 150).toPromise().then((rsp: any) => {
-      this.status = {
-        data: true,
-        loading: false,
-        error: null
-      };
+    this.services.getGeneration(0, 150).toPromise().then((rsp: any) => {
       // console.log(rsp);
       this.pokemonsList = rsp.results;
       this.getPokemon();
       console.log(this.pokemonsList);
     }, err => {
-      this.status = {
-        data: false,
-        loading: false,
-        error: true
-      };
     });
   }
 
@@ -65,19 +52,16 @@ export class MainComponent implements OnInit {
 
 
   getOnePokemon(url, index) {
-    this.status = {
-      data: false,
-      loading: true,
-      error: null
-    };
     this.services.getPokemon(url).toPromise().then((rsp: any) => {
-      this.status = {
-        data: true,
-        loading: false,
-        error: null
-      };
       this.pokemonsList[index].data = rsp;
-      console.log(this.pokemonsList);
+      if( index === 149) {
+        this.status = {
+          data: true,
+          loading: false,
+          error: null
+        };
+
+      }
     }, err => {
       this.status = {
         data: false,

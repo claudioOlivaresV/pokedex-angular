@@ -10,6 +10,8 @@ import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, Mat
 import { MainComponent } from './components/main/main.component';
 import { HttpClientModule } from '@angular/common/http';
 
+// Skeleton 
+import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 
 // Angular Material
 
@@ -35,11 +37,15 @@ import {MatChipsModule} from '@angular/material/chips';
     MatListModule,
     HttpClientModule,
 
+    // Skeleton
+    NgxSkeletonLoaderModule,
+
     // angular material
 
     MatCardModule,
     MatChipsModule
   ],
+  
   providers: [],
   bootstrap: [AppComponent]
 })
