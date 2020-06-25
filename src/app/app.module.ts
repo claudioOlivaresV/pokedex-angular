@@ -12,6 +12,7 @@ import { MainComponent } from './components/main/main.component';
 // Angular Material
 
 import {MatCardModule} from '@angular/material/card';
+import {MatChipsModule} from '@angular/material/chips';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import {MatCardModule} from '@angular/material/card';
 
     // angular material
 
-    MatCardModule
+    MatCardModule,
+    MatChipsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
