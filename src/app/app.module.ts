@@ -17,13 +17,19 @@ import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 
 import {MatCardModule} from '@angular/material/card';
 import {MatChipsModule} from '@angular/material/chips';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { FooterComponent } from './components/footer/footer.component';
+
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
     MyNavbarComponent,
-    MainComponent
+    MainComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -43,9 +49,11 @@ import {MatChipsModule} from '@angular/material/chips';
     // angular material
 
     MatCardModule,
-    MatChipsModule
+    MatChipsModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
-  
+
   providers: [],
   bootstrap: [AppComponent]
 })
