@@ -8,6 +8,8 @@ import { MyNavbarComponent } from './components/my-navbar/my-navbar.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
 import { MainComponent } from './components/main/main.component';
+import { HttpClientModule } from '@angular/common/http';
+
 
 // Angular Material
 
@@ -31,6 +33,7 @@ import {MatChipsModule} from '@angular/material/chips';
     MatSidenavModule,
     MatIconModule,
     MatListModule,
+    HttpClientModule,
 
     // angular material
 
