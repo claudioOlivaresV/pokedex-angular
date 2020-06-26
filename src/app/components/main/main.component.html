@@ -206,7 +206,7 @@
       <div class="col-12">
         <div class="input-field">
           <i class="material-icons prefix">search</i>
-          <input id="icon_prefix" type="text" class="validate">
+          <input id="icon_prefix" type="text" class="validate" [formControl]="comment"  (keyup)="getFilter()">
           <label for="icon_prefix">Buscar Pokémon</label>
         </div>
       </div>
@@ -214,7 +214,7 @@
 
     
 
-    <ng-container *ngFor="let item of pokemonsList; let i = index;">
+    <ng-container *ngFor="let item of filter; let i = index;">
       <ng-container *ngIf="status.data">
         
         <div class="col-12 col-md-4">

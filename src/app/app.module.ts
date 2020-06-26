@@ -6,9 +6,14 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MyNavbarComponent } from './components/my-navbar/my-navbar.component';
 import { LayoutModule } from '@angular/cdk/layout';
-import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
-import { MainComponent } from './components/main/main.component';
+
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+
+// Components
+import { MainComponent } from './components/main/main.component';
+
+import { FooterComponent } from './components/footer/footer.component';
 
 // Skeleton 
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
@@ -19,7 +24,9 @@ import {MatCardModule} from '@angular/material/card';
 import {MatChipsModule} from '@angular/material/chips';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { FooterComponent } from './components/footer/footer.component';
+import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
+
+
 
 
 
@@ -36,12 +43,9 @@ import { FooterComponent } from './components/footer/footer.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     LayoutModule,
-    MatToolbarModule,
-    MatButtonModule,
-    MatSidenavModule,
-    MatIconModule,
-    MatListModule,
     HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule,
 
     // Skeleton
     NgxSkeletonLoaderModule,
@@ -51,7 +55,12 @@ import { FooterComponent } from './components/footer/footer.component';
     MatCardModule,
     MatChipsModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule,
   ],
 
   providers: [],

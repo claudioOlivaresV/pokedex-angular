@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ServiceService } from 'src/app/services/service.service';
 import { async } from '@angular/core/testing';
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
+import { FormControl, Validators } from '@angular/forms';
 
 
 @Component({
@@ -13,7 +14,9 @@ import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 
 
 export class MainComponent implements OnInit {
+  comment = new FormControl('', [Validators.required]);
   pokemonsList: any = [];
+  filter: any =  [];
   status = {
     data: false,
     loading: false,
@@ -37,6 +40,7 @@ export class MainComponent implements OnInit {
     this.services.getGeneration(0, 150).toPromise().then((rsp: any) => {
       // console.log(rsp);
       this.pokemonsList = rsp.results;
+      this.filter = this.pokemonsList;
       this.getPokemon();
       console.log(this.pokemonsList);
     }, err => {
@@ -54,7 +58,9 @@ export class MainComponent implements OnInit {
   getOnePokemon(url, index) {
     this.services.getPokemon(url).toPromise().then((rsp: any) => {
       this.pokemonsList[index].data = rsp;
-      if( index === 149) {
+      this.filter[index].data = rsp;
+
+      if ( index === 149) {
         this.status = {
           data: true,
           loading: false,
@@ -69,6 +75,14 @@ export class MainComponent implements OnInit {
         error: true
       };
     });
+  }
+
+  getFilter() {
+    let  pokemonName = this.comment.value;
+    pokemonName = pokemonName.toLowerCase();
+
+    this.filter = this.pokemonsList.filter(pokemon => pokemon.name.includes(pokemonName));
+    console.log(this.filter);
   }
 
 }
