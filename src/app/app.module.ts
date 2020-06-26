@@ -25,6 +25,7 @@ import {MatChipsModule} from '@angular/material/chips';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
+import { HelperServiceService } from './services/helper-service.service';
 
 
 
@@ -63,7 +64,7 @@ import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, Mat
     MatListModule,
   ],
 
-  providers: [],
+  providers: [HelperServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

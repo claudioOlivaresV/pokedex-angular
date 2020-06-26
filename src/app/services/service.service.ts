@@ -12,7 +12,7 @@ export class ServiceService {
     return this.http.get(url);
   }
 
-  public getGeneration(from, to) {
-    return this.http.get(`https://pokeapi.co/api/v2/pokemon?limit=${to}&offset=${from}`);
+  public getGeneration(offset, limit) {
+    return this.http.get(`https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`);
   }
 }

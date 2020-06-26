@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { HelperServiceService } from 'src/app/services/helper-service.service';
 
 @Component({
   selector: 'app-my-navbar',
@@ -15,6 +16,11 @@ export class MyNavbarComponent {
       map(result => result.matches)
     );
 
-  constructor(private breakpointObserver: BreakpointObserver) {}
+  constructor(private breakpointObserver: BreakpointObserver, private helper: HelperServiceService) {}
+
+  changeMessage(object) {
+    this.helper.changeMessage(object);
+
+  }
 
 }

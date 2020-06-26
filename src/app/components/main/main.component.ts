@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges } from '@angular/core';
 import { ServiceService } from 'src/app/services/service.service';
 import { async } from '@angular/core/testing';
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 import { FormControl, Validators } from '@angular/forms';
+import { HelperServiceService } from 'src/app/services/helper-service.service';
 
 
 @Component({
@@ -13,7 +14,8 @@ import { FormControl, Validators } from '@angular/forms';
 
 
 
-export class MainComponent implements OnInit {
+export class MainComponent implements OnInit, OnChanges {
+  message: any = {};
   comment = new FormControl('', [Validators.required]);
   pokemonsList: any = [];
   filter: any =  [];
@@ -23,21 +25,30 @@ export class MainComponent implements OnInit {
     error: false
   };
 
-  constructor(private services: ServiceService) { }
+  constructor(private services: ServiceService, private helper: HelperServiceService) { }
 
   ngOnInit() {
 
-    this.getGeneration();
+    this.helper.customMessage.subscribe((msg) => {
+      this.message = msg;
+      console.log(this.message);
+      this.getGeneration();
 
-
-    // for (let index = 1; index <= 150; index++) {
-    //   this.getOnePokemon(index);
-    // }
-
+    });
+  }
+  ngOnChanges() {
+    console.log(this.message);
   }
 
   getGeneration() {
-    this.services.getGeneration(0, 150).toPromise().then((rsp: any) => {
+    this.pokemonsList = [];
+    this.filter =  [];
+    this.status = {
+         data: false,
+         loading: false,
+         error: false
+    };
+    this.services.getGeneration(this.message.offset, this.message.limit).toPromise().then((rsp: any) => {
       // console.log(rsp);
       this.pokemonsList = rsp.results;
       this.filter = this.pokemonsList;
@@ -60,13 +71,12 @@ export class MainComponent implements OnInit {
       this.pokemonsList[index].data = rsp;
       this.filter[index].data = rsp;
 
-      if ( index === 149) {
+      if ( index === this.pokemonsList.length - 1 ) {
         this.status = {
           data: true,
           loading: false,
           error: null
         };
-
       }
     }, err => {
       this.status = {

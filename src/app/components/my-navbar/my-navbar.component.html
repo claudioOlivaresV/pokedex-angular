@@ -5,13 +5,12 @@
       [opened]="!(isHandset$ | async)">
     <mat-toolbar>Generaciones</mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item href="#">Kanto</a>
-      <a mat-list-item href="#">Johto</a>
-      <a mat-list-item href="#">Hoenn</a>
-      <a mat-list-item href="#">Teselia</a>
-      <a mat-list-item href="#">Kalos</a>
-      <a mat-list-item href="#">Alola</a>
-      <a mat-list-item href="#">Galar</a>
+      <a mat-list-item href="#" (click)="changeMessage({region: 'kanto', limit : 151, offset: 0})">Kanto</a>
+      <a mat-list-item href="#" (click)="changeMessage({region: 'jotho', limit : 100, offset: 151})">Johto</a>
+      <a mat-list-item href="#" (click)="changeMessage({region: 'jotho', limit : 135, offset: 251})">Hoenn</a>
+      <a mat-list-item href="#" (click)="changeMessage({region: 'sinnoh', limit : 107, offset: 386})">Sinnoh</a>   
+      <a mat-list-item href="#" (click)="changeMessage({region: 'teselia', limit : 156, offset: 493})">Teselia</a>
+      <a mat-list-item href="#" (click)="changeMessage({region: 'kalos', limit : 72, offset: 649})">Kalos</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
