@@ -26,6 +26,9 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
 import { HelperServiceService } from './services/helper-service.service';
+import { DetailsPokemonComponent } from './components/details-pokemon/details-pokemon.component';
+import { PokemonComponent } from './components/pokemon/pokemon.component';
+import { SkeletonComponent } from './components/skeleton/skeleton.component';
 
 
 
@@ -37,7 +40,10 @@ import { HelperServiceService } from './services/helper-service.service';
     AppComponent,
     MyNavbarComponent,
     MainComponent,
-    FooterComponent
+    FooterComponent,
+    DetailsPokemonComponent,
+    PokemonComponent,
+    SkeletonComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +53,6 @@ import { HelperServiceService } from './services/helper-service.service';
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
-
     // Skeleton
     NgxSkeletonLoaderModule,
 

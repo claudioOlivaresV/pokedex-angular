@@ -31,13 +31,11 @@ export class MainComponent implements OnInit, OnChanges {
 
     this.helper.customMessage.subscribe((msg) => {
       this.message = msg;
-      console.log(this.message);
       this.getGeneration();
 
     });
   }
   ngOnChanges() {
-    console.log(this.message);
   }
 
   getGeneration() {
@@ -49,11 +47,9 @@ export class MainComponent implements OnInit, OnChanges {
          error: false
     };
     this.services.getGeneration(this.message.offset, this.message.limit).toPromise().then((rsp: any) => {
-      // console.log(rsp);
       this.pokemonsList = rsp.results;
       this.filter = this.pokemonsList;
       this.getPokemon();
-      console.log(this.pokemonsList);
     }, err => {
     });
   }
@@ -92,7 +88,7 @@ export class MainComponent implements OnInit, OnChanges {
     pokemonName = pokemonName.toLowerCase();
 
     this.filter = this.pokemonsList.filter(pokemon => pokemon.name.includes(pokemonName));
-    console.log(this.filter);
+
   }
 
 }

@@ -1,0 +1,25 @@
+
+          <div class="card darken-1">
+            <div class="card-content pt-1">
+              <img  src="{{item.sprites.front_default}}" alt="{{item.name}} Photo">
+    
+              <span class="card-title activator grey-text text-darken-4 text-capitalize">{{item.name}}
+                <ng-container *ngIf="showButton">
+                  <i class="material-icons right">more_vert</i>
+                </ng-container>
+              </span>
+              <mat-chip-list aria-label="Fish selection">
+                <ng-container *ngFor="let types of item.types; let i = index;">
+                  <mat-chip>{{types.type.name}}</mat-chip>
+                </ng-container>
+              </mat-chip-list>
+            </div>
+            <div class="card-reveal py-3">
+              <span class="card-title grey-text text-darken-4 text-capitalize">{{item.name}}<i class="material-icons right" >close</i></span>
+              <p>Pokémon N° {{item.id}}</p>
+              <div class="card-action px-0 pb-0">
+                <a (click)="viewMore(item.id)">Ver más</a>
+              </div>
+            </div>
+          </div>
+     

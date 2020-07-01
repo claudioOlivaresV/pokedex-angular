@@ -1,0 +1,49 @@
+<button mat-raised-button class="m-4" (click)="back()">Volver</button>
+<ng-container *ngIf="!status.data">
+  <app-skeleton></app-skeleton>
+
+</ng-container>
+
+<ng-container *ngIf="status.data">
+  
+ <div class="row px-4">
+   <div class="col-12 col-md-4">
+     <app-pokemon [item]="status.data" [showButton] = "false"> </app-pokemon>
+   </div>
+
+   <div class="col-12 col-md-4 px-4">
+    <div class="card darken-1">
+      <div class="card-content py-2">
+        
+        <span class="card-title grey-text text-darken-4 text-capitalize">Habilidades </span>
+        <mat-list >
+          <ng-container *ngFor="let ability of status.data.abilities; let i = index;">
+            <mat-list-item class="text-capitalize">{{ability.ability.name}}</mat-list-item>
+             <mat-divider></mat-divider>
+          </ng-container>
+        </mat-list>
+      </div>
+    </div>
+   </div>
+
+   <div class="col-12 col-md-4 px-4">
+    <div class="card darken-1">
+      <div class="card-content py-2">
+        
+        <span class="card-title grey-text text-darken-4 text-capitalize">Caractrísticas </span>
+        <mat-list >
+          <mat-list-item>{{status.data.weight}} kilos</mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item>{{status.data.height / 10}} metros </mat-list-item>
+          
+        </mat-list>
+      </div>
+    </div>
+  </div>
+ </div>
+ <h3 class="px-4">Evoluciones</h3>
+ <div class="row">
+   
+ </div>
+ 
+</ng-container>
