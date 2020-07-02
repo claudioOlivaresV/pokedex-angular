@@ -10,16 +10,16 @@
    <div class="col-12 col-md-4">
      <app-pokemon [item]="status.data" [showButton] = "false"> </app-pokemon>
    </div>
-
    <div class="col-12 col-md-4 px-4">
     <div class="card darken-1">
       <div class="card-content py-2">
-        
         <span class="card-title grey-text text-darken-4 text-capitalize">Habilidades </span>
         <mat-list >
           <ng-container *ngFor="let ability of status.data.abilities; let i = index;">
             <mat-list-item class="text-capitalize">{{ability.ability.name}}</mat-list-item>
-             <mat-divider></mat-divider>
+            <ng-container *ngIf="(status.data.abilities.length - 1) !== i">
+              <mat-divider></mat-divider>
+            </ng-container>
           </ng-container>
         </mat-list>
       </div>
@@ -29,20 +29,37 @@
    <div class="col-12 col-md-4 px-4">
     <div class="card darken-1">
       <div class="card-content py-2">
-        
-        <span class="card-title grey-text text-darken-4 text-capitalize">Caractrísticas </span>
+        <span class="card-title grey-text text-darken-4 text-capitalize">Características </span>
         <mat-list >
           <mat-list-item>{{status.data.weight}} kilos</mat-list-item>
           <mat-divider></mat-divider>
           <mat-list-item>{{status.data.height / 10}} metros </mat-list-item>
-          
         </mat-list>
       </div>
     </div>
   </div>
  </div>
- <h3 class="px-4">Evoluciones</h3>
- <div class="row">
+ 
+ <h3 class="px-4">Línea Evolutiva</h3>
+ <div class="row px-4">
+  
+   <ng-container *ngFor="let pokemon of pokemonsList; let i = index;">
+    <div class="col-12 col-md-4">
+      <app-pokemon [item]="pokemon" [showButton] = "false"> </app-pokemon>
+    </div>
+  </ng-container> 
+  <ng-container *ngIf="!pokemonsList.length">
+    <div class="col-12 col-md-4">
+    <div class="card darken-1">
+      <div class="card-content ">
+        <span class="card-title  grey-text text-darken-4 text-capitalize">No tiene registros
+        </span>
+      </div>
+     
+    </div>
+    </div>
+  </ng-container>
+ 
    
  </div>
  
