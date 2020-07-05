@@ -3,7 +3,7 @@
       [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
       [mode]="(isHandset$ | async) ? 'over' : 'side'"
       [opened]="!(isHandset$ | async)">
-    <mat-toolbar>Generaciones</mat-toolbar>
+    <mat-toolbar><img src="../../../assets/logo.png" width="200"/> </mat-toolbar>
     <mat-nav-list>
       <a mat-list-item href="#" (click)="changeMessage({region: 'kanto', limit : 151, offset: 0})">Kanto</a>
       <a mat-list-item href="#" (click)="changeMessage({region: 'jotho', limit : 100, offset: 151})">Johto</a>

@@ -25,6 +25,8 @@ export class MainComponent implements OnInit, OnChanges {
     error: false
   };
 
+  filterType = ['poison', 'fire']
+
   constructor(private services: ServiceService, private helper: HelperServiceService) { }
 
   ngOnInit() {
@@ -58,7 +60,23 @@ export class MainComponent implements OnInit, OnChanges {
     this.pokemonsList.forEach((element, index) => {
       this.getOnePokemon(element.url, index);
     });
-
+    // setTimeout(() => {
+    //   this.filter = [];
+    //   this.filterType.forEach(element => {
+    //     this.filter = this.filter.concat(this.pokemonsList.filter(pokemon => pokemon.data.types[0].type.name.includes(element))) ;
+    //   });
+    //   this.filter.sort( function (a, b) {
+    //     if (a.data.id > b.data.id) {
+    //       return 1;
+    //     }
+    //     if (a.data.id < b.data.id) {
+    //       return -1;
+    //     }
+    //     // a must be equal to b
+    //     return 0;
+    //   });
+     
+    // }, 5000);
   }
 
 
@@ -86,9 +104,13 @@ export class MainComponent implements OnInit, OnChanges {
   getFilter() {
     let  pokemonName = this.comment.value;
     pokemonName = pokemonName.toLowerCase();
-
     this.filter = this.pokemonsList.filter(pokemon => pokemon.name.includes(pokemonName));
+  }
 
+  getFilter2() {
+    let  pokemonName = this.comment.value;
+    pokemonName = pokemonName.toLowerCase();
+    this.filter = this.pokemonsList.filter(pokemon => pokemon.name.includes(pokemonName));
   }
 
 }
